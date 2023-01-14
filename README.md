@@ -16,20 +16,19 @@ A difficulty rank predictor for Ragnarock maps powered by machine learning.
   
 ## Instructions
 
-### Model Training
+### Running the model
 
-- Place unzipped Ragnarock maps in `data/yourfoldername`.
-- Open `TrainModel.ipynb` with Jupyter notebook.
-- Change the constant `MAP_FOLDER` in the second cell to `data/yourfoldername`.  
-- A `.pmml` file will be exported to the root directory. 
-- For R export:
-  - Make sure `data/features.csv` is present.
-  - Run `TrainModel.R` using R. 
-  - A different `.pmml` file will be exported to the root directory.
+Make sure you have the required Python packages installed, and download the `.joblib` model from the [releases](https://github.com/PKBeam/Edda-MLDifficultyPredictor/releases) section.  
 
-### Model Execution
+You can either run the model from a terminal for quick results, or import the Python file for use in your code project.
 
-Make sure you have the required Python packages installed, and download the `.joblib` model from the releases section.  
+#### From terminal
+
+```sh
+python RunModel.py Edda-MLDP-Python.joblib path/to/my/map
+```
+
+The program will print its predictions to stdout. 
 
 #### From Python
 
@@ -42,10 +41,13 @@ for result in predictions:
     print(result)
 ```
 
-#### From terminal
+### Training the model
 
-```sh
-$ python RunModel.py Edda-MLDP-Python.joblib path/to/my/map
-```
-
-The program will print its predictions to stdout. 
+- Place unzipped Ragnarock maps in `data/yourfoldername`.
+- Open `TrainModel.ipynb` with Jupyter notebook.
+- Change the constant `MAP_FOLDER` in the second cell to `data/yourfoldername`.  
+- A `.pmml` file will be exported to the root directory. 
+- For R export:
+  - Copy the training dataset `.csv` to `data/features.csv`.
+  - Run `TrainModel.R` using R. 
+  - A different `.pmml` file will be exported to the root directory.
