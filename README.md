@@ -2,6 +2,8 @@
 
 A difficulty rank predictor for Ragnarock maps powered by machine learning.
 
+**Note**: the following sections only apply to the repository for commit `2183458` and earlier.
+
 ## Requirements
 
 - Python 3
